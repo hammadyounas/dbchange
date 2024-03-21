@@ -5,6 +5,8 @@ const connectDb = require('./db/db')
 
 const app = express()
 
+const port = process.env.PORT || 5000
+
 app.use(cors())
 
 connectDb()
@@ -14,5 +16,4 @@ app.get("/feedbacks",async (req, res) => {
   res.send(feedback);
 });
 
-
-app.listen(5000, () => console.log(`Server runing at PORT ${5000}`));
+app.listen(port, () => console.log(`Server runing at PORT ${port}`));
