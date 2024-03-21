@@ -12,7 +12,7 @@ app.use(cors())
 connectDb()
 
 app.get("/feedbacks",async (req, res) => {
-  const feedback = await feedbacks.find({}).catch((error) => {
+  const feedback = await feedbacks.find({email:'undefined'}).catch((error) => {
     res.status(500).send(error )
   })
   res.status(200).send(feedback);
