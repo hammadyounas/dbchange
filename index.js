@@ -11,7 +11,7 @@ connectDb()
 
 app.get("/",async (req, res) => {
   const feedback = await feedbacks.find({}) 
-  res.json(feedback);
+  res.send(feedback);
 });
 
 
