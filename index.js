@@ -9,7 +9,7 @@ app.use(cors())
 
 connectDb()
 
-app.get("/",async (req, res) => {
+app.get("/feedbacks",async (req, res) => {
   const feedback = await feedbacks.find({}) 
   res.send(feedback);
 });
